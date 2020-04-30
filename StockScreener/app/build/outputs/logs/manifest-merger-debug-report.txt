@@ -4,6 +4,8 @@ ADDED from C:\Users\Kaloyan.Mednikarov\AndroidStudioProjects\StockScreener\app\s
 INJECTED from C:\Users\Kaloyan.Mednikarov\AndroidStudioProjects\StockScreener\app\src\main\AndroidManifest.xml:2:1-21:12
 INJECTED from C:\Users\Kaloyan.Mednikarov\AndroidStudioProjects\StockScreener\app\src\main\AndroidManifest.xml:2:1-21:12
 INJECTED from C:\Users\Kaloyan.Mednikarov\AndroidStudioProjects\StockScreener\app\src\main\AndroidManifest.xml:2:1-21:12
+MERGED from [androidx.databinding:databinding-adapters:3.4.1] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\10f65edbc7a4154958c9acbf1be69a34\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.databinding:databinding-runtime:3.4.1] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\5c7dabe62ad8fb2a4c4b58ff7612be29\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\ccb72f6700d11a9b4384eabf0fa191ef\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\9db5e0fd5708b59a9c2ea69f74923040\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\a1e08b6662d8bb628da27ec6ef3081a3\AndroidManifest.xml:17:1-31:12
@@ -17,14 +19,14 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Kal
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\3ed58079f0fcbbe831c9f18262075b1c\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\08f8f0ca5439039bc4495ff0f10c8538\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\8168f670c3dbf5a29ab3219dc59088d3\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\8d5fe788d102af8beaa1eeca3ee06785\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\aefb6b8ece7e3901f75a1b623e34314c\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\2fcee9483f97e75aabf6c0ea61e3d6c3\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\cbf8034c79d0645563c6ed94ac5c7f15\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite:2.0.1] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\52a78cbce63bf4b0f1a9a602fa833e06\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\7be844400a9e93a44122310bd587d591\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\6f6fc4d819cc12ed92c4169cc5b3f944\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.1] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\a4c4a46fb5197f701ecd35910d1ea86e\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\aefb6b8ece7e3901f75a1b623e34314c\AndroidManifest.xml:17:1-27:12
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\8d5fe788d102af8beaa1eeca3ee06785\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\4034cfcb9cfd83610b082be031f1b18c\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\da9a1db2ad311f6dc4175adc087798be\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\a11bd6e2d8a6b973630ca5c364cf020c\AndroidManifest.xml:17:1-22:12
@@ -87,6 +89,10 @@ uses-sdk
 INJECTED from C:\Users\Kaloyan.Mednikarov\AndroidStudioProjects\StockScreener\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Kaloyan.Mednikarov\AndroidStudioProjects\StockScreener\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Kaloyan.Mednikarov\AndroidStudioProjects\StockScreener\app\src\main\AndroidManifest.xml
+MERGED from [androidx.databinding:databinding-adapters:3.4.1] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\10f65edbc7a4154958c9acbf1be69a34\AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-adapters:3.4.1] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\10f65edbc7a4154958c9acbf1be69a34\AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-runtime:3.4.1] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\5c7dabe62ad8fb2a4c4b58ff7612be29\AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-runtime:3.4.1] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\5c7dabe62ad8fb2a4c4b58ff7612be29\AndroidManifest.xml:22:5-44
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\ccb72f6700d11a9b4384eabf0fa191ef\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\ccb72f6700d11a9b4384eabf0fa191ef\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\9db5e0fd5708b59a9c2ea69f74923040\AndroidManifest.xml:5:5-7:41
@@ -113,6 +119,10 @@ MERGED from [androidx.customview:customview:1.0.0] C:\Users\Kaloyan.Mednikarov\.
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\08f8f0ca5439039bc4495ff0f10c8538\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\8168f670c3dbf5a29ab3219dc59088d3\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\8168f670c3dbf5a29ab3219dc59088d3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\8d5fe788d102af8beaa1eeca3ee06785\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\8d5fe788d102af8beaa1eeca3ee06785\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\aefb6b8ece7e3901f75a1b623e34314c\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\aefb6b8ece7e3901f75a1b623e34314c\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\2fcee9483f97e75aabf6c0ea61e3d6c3\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\2fcee9483f97e75aabf6c0ea61e3d6c3\AndroidManifest.xml:20:5-44
 MERGED from [androidx.sqlite:sqlite-framework:2.0.1] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\cbf8034c79d0645563c6ed94ac5c7f15\AndroidManifest.xml:20:5-44
@@ -125,10 +135,6 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Kaloyan.
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\6f6fc4d819cc12ed92c4169cc5b3f944\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.1] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\a4c4a46fb5197f701ecd35910d1ea86e\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.1] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\a4c4a46fb5197f701ecd35910d1ea86e\AndroidManifest.xml:20:5-44
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\aefb6b8ece7e3901f75a1b623e34314c\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\aefb6b8ece7e3901f75a1b623e34314c\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\8d5fe788d102af8beaa1eeca3ee06785\AndroidManifest.xml:20:5-44
-MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\8d5fe788d102af8beaa1eeca3ee06785\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\4034cfcb9cfd83610b082be031f1b18c\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\4034cfcb9cfd83610b082be031f1b18c\AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\Kaloyan.Mednikarov\.gradle\caches\transforms-2\files-2.1\da9a1db2ad311f6dc4175adc087798be\AndroidManifest.xml:20:5-22:41
