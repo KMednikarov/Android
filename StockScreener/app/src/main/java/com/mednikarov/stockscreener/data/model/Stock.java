@@ -1,6 +1,13 @@
 package com.mednikarov.stockscreener.data.model;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Stock {
+    @PrimaryKey
+    @NonNull
     private String symbolName;
     private String companyName;
     private String date;
@@ -17,6 +24,10 @@ public class Stock {
         this.closePrice = closePrice;
         this.lowPrice = lowPrice;
         this.highPrice = highPrice;
+    }
+
+    public static Stock newInstance() {
+        return new Stock("","","",0,0,0,0);
     }
 
     public String getSymbolName() {

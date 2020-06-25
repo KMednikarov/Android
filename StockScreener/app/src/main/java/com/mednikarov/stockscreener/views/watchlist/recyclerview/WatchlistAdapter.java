@@ -15,6 +15,7 @@ import java.util.List;
 
 public class WatchlistAdapter extends RecyclerView.Adapter<WatchlistViewHolder> {
     private List<Stock> stockList;
+    private Reposi
     private WatchlistAdapter(){
         stockList = new ArrayList<>();
         stockList.add(new Stock("AAPL","Apple Inc.","16.06.2020",5,5,5,5));

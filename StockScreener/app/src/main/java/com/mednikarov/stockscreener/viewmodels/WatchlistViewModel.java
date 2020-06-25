@@ -4,17 +4,25 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.mednikarov.stockscreener.data.Repository;
+import com.mednikarov.stockscreener.data.StocksRepository;
 import com.mednikarov.stockscreener.data.model.Stock;
 
 public class WatchlistViewModel extends ViewModel {
-    private MutableLiveData<Stock> stockLiveData;
-    private Repository stocksRepository;
-    public MutableLiveData<Stock> getStockLiveData() {
-        return stockLiveData;
+    private MutableLiveData<Stock> mStockLiveData;
+    private Repository mStocksRepository;
+    public WatchlistViewModel(){
+        mStocksRepository = StocksRepository.getInstance();
+    }
+    public void updateStockData(){
+
+        Stock stock = getRepository().getStock("AAPL");
+        getLiveData().postValue(stock);
     }
 
-    public void updateStockData(){
-        Stock stock = new Stock("AAPL","Apple Inc.","25.06.2020",155,555,235,445);
-        stockLiveData.postValue(stock);
+    private Repository getRepository(){
+        return mStocksRepository;
+    }
+    private MutableLiveData<Stock> getLiveData(){
+        return mStockLiveData;
     }
 }
