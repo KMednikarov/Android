@@ -1,4 +1,4 @@
-package com.mednikarov.stockscreener.views.watchlist.recyclerview.viewholders;
+package com.mednikarov.stockscreener.views.watchlist.recyclerview;
 
 import android.view.View;
 import android.widget.TextView;

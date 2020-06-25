@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/StockScreener.iml" filepath="$PROJECT_DIR$/StockScreener.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StockScreener.iml" filepath="$PROJECT_DIR$/StockScreener.iml" group="StockScreener" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="StockScreener/app" />
     </modules>
   </component>
 </project>

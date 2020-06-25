@@ -1,4 +1,4 @@
-package com.mednikarov.stockscreener.ui.fragments;
+package com.mednikarov.stockscreener.views.watchlist;
 
 import android.os.Bundle;
 
@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.mednikarov.stockscreener.R;
 import com.mednikarov.stockscreener.databinding.FragmentWatchlistBinding;
-import com.mednikarov.stockscreener.ui.recyclerview.adapters.WatchlistAdapter;
+import com.mednikarov.stockscreener.views.watchlist.recyclerview.WatchlistAdapter;
 
 
 /**

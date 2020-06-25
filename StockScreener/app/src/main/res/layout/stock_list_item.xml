@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="200dp"
     android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_margin="20dp"
     android:orientation="vertical"
-    android:id="@+id/tst"
-    android:theme="@style/AppTheme">
+    android:theme="@style/AppTheme"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="15dp"
+    app:cardMaxElevation="5dp">
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stock_list_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorAccent"
-        android:id="@+id/stock_list_item"
-        >
+        android:padding="8dp">
+
         <TextView
             android:id="@+id/txt_symbol"
-            android:layout_height="match_parent"
             android:layout_width="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="match_parent"
+            android:text="Symbol"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:text="Symbol">
+            app:layout_constraintTop_toTopOf="parent">
 
         </TextView>
+
         <TextView
             android:id="@+id/txt_price"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"
+            android:text="Price"
             app:layout_constraintRight_toRightOf="parent"
-            android:text="Price">
+            app:layout_constraintTop_toTopOf="parent">
 
         </TextView>
     </androidx.constraintlayout.widget.ConstraintLayout>

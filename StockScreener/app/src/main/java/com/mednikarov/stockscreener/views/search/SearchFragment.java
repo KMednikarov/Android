@@ -1,4 +1,4 @@
-package com.mednikarov.stockscreener.ui.fragments;
+package com.mednikarov.stockscreener.views.search;
 
 import android.os.Bundle;
 

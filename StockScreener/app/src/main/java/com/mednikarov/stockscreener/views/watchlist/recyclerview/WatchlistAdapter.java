@@ -1,4 +1,4 @@
-package com.mednikarov.stockscreener.views.watchlist.recyclerview.adapters;
+package com.mednikarov.stockscreener.views.watchlist.recyclerview;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mednikarov.stockscreener.R;
 import com.mednikarov.stockscreener.data.model.Stock;
-import com.mednikarov.stockscreener.views.watchlist.recyclerview.viewholders.WatchlistViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;

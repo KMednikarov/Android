@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">StockScreener</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="watchlist_fragment_title">Watchlist</string>
+    <string name="search_fragment_title">Search</string>
+    <string name="side_menu">side_menu</string>
 </resources>
