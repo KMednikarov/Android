@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
@@ -11,8 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mednikarov.stockscreener.R;
+import com.mednikarov.stockscreener.data.model.Stock;
 import com.mednikarov.stockscreener.databinding.FragmentWatchlistBinding;
+import com.mednikarov.stockscreener.viewmodels.WatchlistViewModel;
 import com.mednikarov.stockscreener.views.watchlist.recyclerview.WatchlistAdapter;
+import com.mednikarov.stockscreener.views.watchlist.recyclerview.WatchlistViewHolder;
+
+import java.util.List;
 
 
 /**
@@ -28,6 +35,7 @@ public class WatchlistFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private FragmentWatchlistBinding binding;
     private WatchlistAdapter adapter;
+    private WatchlistViewModel mViewModel;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -67,13 +75,33 @@ public class WatchlistFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_watchlist, container, false);
+        mViewModel = WatchlistViewModel.newInstance();
         setupRecyclerView();
+        observeData();
         return binding.getRoot();
     }
 
+    private void observeData(){
+        getViewModel().updateStockData();
+        getViewModel().getWatchlistLiveData().observe(this, new Observer<List<Stock>>() {
+            @Override
+            public void onChanged(List<Stock> stocks) {
+                for(Stock stock: stocks){
+                    adapter.addToWatchlist(stock);
+                }
+                binding.watchlistRecyclerView.setAdapter(adapter);
+            }
+        });
+    }
+
+    private WatchlistViewModel getViewModel(){
+        return mViewModel;
+    }
     private void setupRecyclerView() {
         adapter = WatchlistAdapter.newInstance();
         binding.watchlistRecyclerView.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
         binding.watchlistRecyclerView.setAdapter(adapter);
+
+
     }
 }

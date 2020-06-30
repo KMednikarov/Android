@@ -11,27 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a8c575c-db44-4649-947a-8d21314205ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/data/StocksRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/data/retrofit/RetrofitInstance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/data/retrofit/RetrofitManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/data/retrofit/StockService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/data/room/StockDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/data/room/StockDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HotOrNot/app/src/main/java/com/learn/hotornot/data/retrofit/WeatherRetrofitInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HotOrNot/app/src/main/java/com/learn/hotornot/data/retrofit/WeatherRetrofitInstance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/mednikarov/stockscreener/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/mednikarov/stockscreener/BuildConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/bundle_manifest/debug/processDebugManifest/bundle-manifest/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/instant_app_manifest/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/instant_app_manifest/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/data/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/data/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/data/model/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/data/model/Stock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/data/StocksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/data/StocksRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/viewmodels/WatchlistViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/viewmodels/WatchlistViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/views/watchlist/WatchlistFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/views/watchlist/WatchlistFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/views/watchlist/recyclerview/WatchlistAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mednikarov/stockscreener/views/watchlist/recyclerview/WatchlistAdapter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

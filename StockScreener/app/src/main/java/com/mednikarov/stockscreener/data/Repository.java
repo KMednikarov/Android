@@ -2,7 +2,9 @@ package com.mednikarov.stockscreener.data;
 
 import com.mednikarov.stockscreener.data.model.Stock;
 
+import java.util.List;
+
 public interface Repository {
-    Stock getStock(String symbol);
-    void insertStock(Stock stock);
+    List<Stock> getWatchlist();
+
 }
