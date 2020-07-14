@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">9gagApp</string>
-    <string name="btn_text_home">Home</string>
-    <string name="btn_text_profile">Profile</string>
-    <string name="btn_text_news">News</string>
-    <string name="btn_text_videos">Videos</string>
-    <string name="btn_text_explore">Explore</string>
-    <string name="btn_share">Share</string>
-</resources>
