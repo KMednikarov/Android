@@ -1,10 +1,12 @@
 package com.mednikarov.stockscreener.viewmodels;
 
+import android.app.Application;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.mednikarov.stockscreener.data.Repository;
 import com.mednikarov.stockscreener.data.StocksRepository;
+import com.mednikarov.stockscreener.data.StocksRepositoryImpl;
 import com.mednikarov.stockscreener.data.model.Stock;
 
 import java.util.List;
@@ -12,9 +14,9 @@ import java.util.List;
 public class WatchlistViewModel extends ViewModel {
     private MutableLiveData<Stock> mStockLiveData = new MutableLiveData<>();
     private MutableLiveData<List<Stock>> mWatchlistLiveData = new MutableLiveData<>();
-    private Repository mStocksRepository;
-    public WatchlistViewModel(){
-        mStocksRepository = StocksRepository.getInstance();
+    private StocksRepository mStocksRepository;
+    private WatchlistViewModel(Application application){
+        mStocksRepository = StocksRepositoryImpl.newInstance(application);
     }
     public void updateStockData(){
         getWatchlistLiveData().postValue(getRepository().getWatchlist());
@@ -22,7 +24,7 @@ public class WatchlistViewModel extends ViewModel {
         //getLiveData().postValue(stock);
     }
 
-    private Repository getRepository(){
+    private StocksRepository getRepository(){
         return mStocksRepository;
     }
     public MutableLiveData<Stock> getLiveData(){
@@ -31,7 +33,7 @@ public class WatchlistViewModel extends ViewModel {
     public MutableLiveData<List<Stock>> getWatchlistLiveData(){
         return mWatchlistLiveData;
     }
-    public static WatchlistViewModel newInstance(){
-        return new WatchlistViewModel();
+    public static WatchlistViewModel newInstance(Application application){
+        return new WatchlistViewModel(application);
     }
 }

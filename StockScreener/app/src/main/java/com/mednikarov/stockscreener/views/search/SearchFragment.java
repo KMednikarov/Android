@@ -2,13 +2,21 @@ package com.mednikarov.stockscreener.views.search;
 
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.mednikarov.stockscreener.R;
+import com.mednikarov.stockscreener.data.StocksRepositoryImpl;
+import com.mednikarov.stockscreener.databinding.FragmentSearchBinding;
+import com.mednikarov.stockscreener.databinding.FragmentWatchlistBinding;
+import com.mednikarov.stockscreener.viewmodels.WatchlistViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,7 +28,8 @@ public class SearchFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    private FragmentSearchBinding binding;
+    private StocksRepositoryImpl stocksRepository;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -57,7 +66,17 @@ public class SearchFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false);
+       // stocksRepository = ViewModelProviders.of(getActivity()).get(WatchlistViewModel.class);
+        binding.edtSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                stocksRepository.searchStock(binding.edtSearch.getText().toString());
+
+                return false;
+            }
+        });
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false);
+        return binding.getRoot();
     }
 }

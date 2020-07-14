@@ -12,15 +12,10 @@ import com.mednikarov.stockscreener.data.model.Stock;
 import java.util.List;
 
 @Dao
-public interface StockDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insert(Stock stock);
-    @Delete
-    void delete(Stock stock);
-    @Update
-    void update(Stock stock);
+abstract class StockDao implements BaseDao<Stock> {
+
     @Query("SELECT * FROM  stock")
-    List<Stock> selectAll();
+    abstract List<Stock> selectAll();
     @Query("SELECT * FROM stock WHERE companyName = (:name)")
-    Stock selectByName(String name);
+    abstract Stock selectByName(String name);
 }

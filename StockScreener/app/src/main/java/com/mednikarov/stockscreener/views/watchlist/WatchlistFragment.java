@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
@@ -75,7 +76,7 @@ public class WatchlistFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_watchlist, container, false);
-        mViewModel = WatchlistViewModel.newInstance();
+        mViewModel = ViewModelProviders.of(this).get(WatchlistViewModel.class);
         setupRecyclerView();
         observeData();
         return binding.getRoot();

@@ -14,7 +14,10 @@ public abstract class StockDatabase extends RoomDatabase {
     private static StockDatabase mDatabaseInstance;
     public abstract StockDao stockDao();
 
-    public static StockDatabase getInstance(Context context){
+    public StockDatabase() {
+    }
+
+    public static StockDatabase getInstance(final Context context){
         if(mDatabaseInstance == null){
             mDatabaseInstance = Room.databaseBuilder(context, StockDatabase.class, DATABASE_NAME)
                     .allowMainThreadQueries()
