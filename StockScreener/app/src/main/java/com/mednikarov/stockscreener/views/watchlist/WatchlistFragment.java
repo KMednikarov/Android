@@ -2,11 +2,14 @@ package com.mednikarov.stockscreener.views.watchlist;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +23,7 @@ import com.mednikarov.stockscreener.views.WatchlistItemChanged;
 import com.mednikarov.stockscreener.views.watchlist.recyclerview.WatchlistAdapter;
 import com.mednikarov.stockscreener.views.watchlist.recyclerview.WatchlistViewHolder;
 
+import java.util.Collections;
 import java.util.List;
 
 
@@ -104,8 +108,8 @@ public class WatchlistFragment extends Fragment implements WatchlistItemChanged 
         mAdapter = WatchlistAdapter.newInstance();
         mBinding.watchlistRecyclerView.setLayoutManager(new LinearLayoutManager(mBinding.getRoot().getContext()));
         mBinding.watchlistRecyclerView.setAdapter(mAdapter);
-
-
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(createHelperCallback());
+        itemTouchHelper.attachToRecyclerView(mBinding.watchlistRecyclerView);
     }
 
     @Override
@@ -118,5 +122,53 @@ public class WatchlistFragment extends Fragment implements WatchlistItemChanged 
     public void onRemovedFromWatchlist(Quote quote) {
         getViewModel().removeFromWatchlist(quote);
         getViewModel().updateStockData();
+    }
+
+
+    private ItemTouchHelper.Callback createHelperCallback() {
+        /*First Param is for Up/Down motion, second is for Left/Right.
+        Note that we can supply 0, one constant (e.g. ItemTouchHelper.LEFT), or two constants (e.g.
+        ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) to specify what directions are allowed.
+        */
+        ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(
+                ItemTouchHelper.UP | ItemTouchHelper.DOWN,
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                if(viewHolder.getItemViewType() != target.getItemViewType()){
+                    return false;
+                }
+
+                int dragFrom = viewHolder.getBindingAdapterPosition();
+                int dragTo = target.getBindingAdapterPosition();
+
+                if(dragFrom == -1 || dragTo == -1 || dragFrom == dragTo){
+                    return false;
+                }
+
+                onWatchlistItemMoved(dragFrom, dragTo);
+                return true;
+            }
+
+            @Override
+            public void onSwiped(final RecyclerView.ViewHolder viewHolder, int swipeDir) {
+                int position = viewHolder.getBindingAdapterPosition();
+                onWatchlistItemSwiped(position);
+            }
+        };
+
+
+        return simpleItemTouchCallback;
+    }
+
+    private void onWatchlistItemMoved(int position, int newPosition) {
+        Collections.swap(mAdapter.getStockList(), position, newPosition);
+        mAdapter.notifyItemMoved(position, newPosition);
+    }
+
+    private void onWatchlistItemSwiped(int position){
+        mAdapter.removeItemAt(position);
+        mAdapter.notifyItemRemoved(position);
     }
 }

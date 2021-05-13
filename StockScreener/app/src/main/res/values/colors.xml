@@ -8,4 +8,5 @@
     <color name="colorWindowBackground">#FFFFFF</color>
     <color name="colorTabSelected">#FFFFFF</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorRippleEffect">#1903A9F4</color>
 </resources>

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mednikarov.stockscreener.R;
 import com.mednikarov.stockscreener.data.model.Quote;
+import com.mednikarov.stockscreener.data.model.StockBatch;
 import com.mednikarov.stockscreener.databinding.FragmentWatchlistBinding;
 
 import java.util.ArrayList;
@@ -40,12 +41,18 @@ public class WatchlistAdapter extends RecyclerView.Adapter<WatchlistViewHolder> 
     public void addToWatchlist(Quote quote){
         getStockList().add(quote);
     }
+    public Quote getItemAt(int position){
+        return getStockList().get(position);
+    }
+    public void removeItemAt(int position){
+        getStockList().remove(position);
+    }
 
     public void clearWatchlist() {
         getStockList().clear();
     }
 
-    private List<Quote> getStockList(){
+    public List<Quote> getStockList(){
         return stockList;
     }
 
