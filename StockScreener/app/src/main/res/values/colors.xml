@@ -2,9 +2,10 @@
 <resources>
     <color name="colorPrimary">#03A9F4</color>
     <color name="colorPrimaryDark">#2285F6</color>
-    <color name="colorAccent">#5CFFFFFF</color>
+    <color name="colorAccent">#00FFFFFF</color>
     <color name="colorTextPrimary">#000000</color>
     <color name="colorTextSecondary">#FFFFFF</color>
     <color name="colorWindowBackground">#FFFFFF</color>
     <color name="colorTabSelected">#FFFFFF</color>
+    <color name="colorWhite">#FFFFFF</color>
 </resources>

@@ -2,35 +2,45 @@ package com.mednikarov.stockscreener.viewmodels;
 
 import android.app.Application;
 
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-import com.mednikarov.stockscreener.data.StocksRepository;
-import com.mednikarov.stockscreener.data.StocksRepositoryImpl;
-import com.mednikarov.stockscreener.data.model.Stock;
+import com.mednikarov.stockscreener.data.model.Quote;
+import com.mednikarov.stockscreener.data.model.StockBatch;
+import com.mednikarov.stockscreener.data.repository.StocksRepository;
+import com.mednikarov.stockscreener.data.repository.StocksRepositoryImpl;
 
 import java.util.List;
 
-public class WatchlistViewModel extends ViewModel {
-    private MutableLiveData<Stock> mStockLiveData = new MutableLiveData<>();
-    private MutableLiveData<List<Stock>> mWatchlistLiveData = new MutableLiveData<>();
+public class WatchlistViewModel extends AndroidViewModel {
+    private MutableLiveData<Quote> mStockLiveData = new MutableLiveData<>();
+    private MutableLiveData<List<Quote>> mWatchlistLiveData = new MutableLiveData<>();
     private StocksRepository mStocksRepository;
-    private WatchlistViewModel(Application application){
+    public WatchlistViewModel(@NonNull Application application){
+        super(application);
         mStocksRepository = StocksRepositoryImpl.newInstance(application);
+
     }
     public void updateStockData(){
-        getWatchlistLiveData().postValue(getRepository().getWatchlist());
-        //Stock stock = getRepository().getStock("AAPL");
-        //getLiveData().postValue(stock);
+        getWatchlistLiveData().setValue(getRepository().getWatchlist());
+    }
+
+    public void addToWatchlist(Quote quote){
+        getRepository().addToWatchlist(quote);
+    }
+
+    public void removeFromWatchlist(Quote quote){
+        getRepository().removeFromWatchlist(quote);
     }
 
     private StocksRepository getRepository(){
         return mStocksRepository;
     }
-    public MutableLiveData<Stock> getLiveData(){
+    public MutableLiveData<Quote> getLiveData(){
         return mStockLiveData;
     }
-    public MutableLiveData<List<Stock>> getWatchlistLiveData(){
+    public MutableLiveData<List<Quote>> getWatchlistLiveData(){
         return mWatchlistLiveData;
     }
     public static WatchlistViewModel newInstance(Application application){

@@ -1,21 +1,17 @@
 package com.mednikarov.stockscreener.data.room;
 
 import androidx.room.Dao;
-import androidx.room.Delete;
-import androidx.room.Insert;
-import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
-import androidx.room.Update;
 
-import com.mednikarov.stockscreener.data.model.Stock;
+import com.mednikarov.stockscreener.data.model.Quote;
 
 import java.util.List;
 
 @Dao
-abstract class StockDao implements BaseDao<Stock> {
+abstract class StockDao implements BaseDao<Quote> {
 
-    @Query("SELECT * FROM  stock")
-    abstract List<Stock> selectAll();
-    @Query("SELECT * FROM stock WHERE companyName = (:name)")
-    abstract Stock selectByName(String name);
+    @Query("SELECT * FROM quotes")
+    abstract List<Quote> selectAll();
+    @Query("SELECT * FROM quotes WHERE symbol = (:name)")
+    abstract Quote selectByName(String name);
 }

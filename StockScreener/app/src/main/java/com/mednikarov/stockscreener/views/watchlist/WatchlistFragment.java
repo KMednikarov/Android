@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -14,9 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mednikarov.stockscreener.R;
-import com.mednikarov.stockscreener.data.model.Stock;
+import com.mednikarov.stockscreener.data.model.Quote;
 import com.mednikarov.stockscreener.databinding.FragmentWatchlistBinding;
 import com.mednikarov.stockscreener.viewmodels.WatchlistViewModel;
+import com.mednikarov.stockscreener.views.WatchlistItemChanged;
 import com.mednikarov.stockscreener.views.watchlist.recyclerview.WatchlistAdapter;
 import com.mednikarov.stockscreener.views.watchlist.recyclerview.WatchlistViewHolder;
 
@@ -28,14 +28,14 @@ import java.util.List;
  * Use the {@link WatchlistFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class WatchlistFragment extends Fragment {
+public class WatchlistFragment extends Fragment implements WatchlistItemChanged {
     public static final String TAG = WatchlistFragment.class.getSimpleName();
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private FragmentWatchlistBinding binding;
-    private WatchlistAdapter adapter;
+    private FragmentWatchlistBinding mBinding;
+    private WatchlistAdapter mAdapter;
     private WatchlistViewModel mViewModel;
 
     // TODO: Rename and change types of parameters
@@ -75,22 +75,24 @@ public class WatchlistFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_watchlist, container, false);
+        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_watchlist, container, false);
         mViewModel = ViewModelProviders.of(this).get(WatchlistViewModel.class);
+        WatchlistViewHolder.addObserver(this);
         setupRecyclerView();
         observeData();
-        return binding.getRoot();
+        getViewModel().updateStockData();
+        return mBinding.getRoot();
     }
 
     private void observeData(){
-        getViewModel().updateStockData();
-        getViewModel().getWatchlistLiveData().observe(this, new Observer<List<Stock>>() {
+        getViewModel().getWatchlistLiveData().observe(getViewLifecycleOwner(), new Observer<List<Quote>>() {
             @Override
-            public void onChanged(List<Stock> stocks) {
-                for(Stock stock: stocks){
-                    adapter.addToWatchlist(stock);
+            public void onChanged(List<Quote> quotes) {
+                mAdapter.clearWatchlist();
+                for(Quote quote: quotes){
+                    mAdapter.addToWatchlist(quote);
                 }
-                binding.watchlistRecyclerView.setAdapter(adapter);
+                mBinding.watchlistRecyclerView.setAdapter(mAdapter);
             }
         });
     }
@@ -99,10 +101,22 @@ public class WatchlistFragment extends Fragment {
         return mViewModel;
     }
     private void setupRecyclerView() {
-        adapter = WatchlistAdapter.newInstance();
-        binding.watchlistRecyclerView.setLayoutManager(new LinearLayoutManager(binding.getRoot().getContext()));
-        binding.watchlistRecyclerView.setAdapter(adapter);
+        mAdapter = WatchlistAdapter.newInstance();
+        mBinding.watchlistRecyclerView.setLayoutManager(new LinearLayoutManager(mBinding.getRoot().getContext()));
+        mBinding.watchlistRecyclerView.setAdapter(mAdapter);
 
 
+    }
+
+    @Override
+    public void onAddedToWatchlist(Quote quote) {
+        //getViewModel().addToWatchlist(quote);
+        //getViewModel().updateStockData();
+    }
+
+    @Override
+    public void onRemovedFromWatchlist(Quote quote) {
+        getViewModel().removeFromWatchlist(quote);
+        getViewModel().updateStockData();
     }
 }

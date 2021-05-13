@@ -7,4 +7,6 @@
     <string name="search_fragment_title">Search</string>
     <string name="side_menu">side_menu</string>
     <string name="search">Search</string>
+    <string name="watchlist_menu_title">Watchlist</string>
+    <string name="search_menu_title">Search</string>
 </resources>

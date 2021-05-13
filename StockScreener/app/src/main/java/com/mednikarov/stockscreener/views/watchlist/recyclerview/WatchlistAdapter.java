@@ -8,19 +8,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mednikarov.stockscreener.R;
-import com.mednikarov.stockscreener.data.model.Stock;
+import com.mednikarov.stockscreener.data.model.Quote;
+import com.mednikarov.stockscreener.databinding.FragmentWatchlistBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class WatchlistAdapter extends RecyclerView.Adapter<WatchlistViewHolder> {
-    private List<Stock> stockList;
+    private List<Quote> stockList;
+    private FragmentWatchlistBinding binding;
     private WatchlistAdapter(){
         stockList = new ArrayList<>();
-        /*stockList.add(new Stock("AAPL","Apple Inc.","16.06.2020",5,5,5,5));
-        stockList.add(new Stock("GOOGL","Google Inc.","16.06.2020",6,6,6,6));
-        stockList.add(new Stock("FCBK","Facebook Inc.","16.06.2020",7,7,7,7));
-        stockList.add(new Stock("TSL","Tesla Inc.","16.06.2020",6,6,6,6));*/
     }
     @NonNull
     @Override
@@ -39,15 +37,23 @@ public class WatchlistAdapter extends RecyclerView.Adapter<WatchlistViewHolder> 
     public int getItemCount() {
         return getStockList().size();
     }
-    public void addToWatchlist(Stock stock){
-        getStockList().add(stock);
+    public void addToWatchlist(Quote quote){
+        getStockList().add(quote);
     }
 
-    private List<Stock> getStockList(){
+    public void clearWatchlist() {
+        getStockList().clear();
+    }
+
+    private List<Quote> getStockList(){
         return stockList;
     }
 
     public static WatchlistAdapter newInstance(){
         return new WatchlistAdapter();
+    }
+
+    public interface OnItemClicked {
+        void onItemClick(int position);
     }
 }
