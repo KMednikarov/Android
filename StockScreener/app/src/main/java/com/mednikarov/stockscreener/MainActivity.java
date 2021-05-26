@@ -1,7 +1,6 @@
 package com.mednikarov.stockscreener;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -9,12 +8,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.mednikarov.stockscreener.databinding.ActivityMainBinding;
-import com.mednikarov.stockscreener.views.search.SearchFragment;
-import com.mednikarov.stockscreener.views.watchlist.WatchlistFragment;
+import com.mednikarov.stockscreener.ui.fragments.SearchFragment;
+import com.mednikarov.stockscreener.ui.fragments.WatchlistFragment;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
@@ -32,10 +30,6 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.fragment_container,fragment)
                 .addToBackStack(null)
                 .commit();
-    }
-
-    public Context getContext(){
-        return this;
     }
 
     private final BottomNavigationView.OnNavigationItemSelectedListener bottomNavigationListener = new BottomNavigationView.OnNavigationItemSelectedListener() {

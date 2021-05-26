@@ -6,46 +6,47 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
-import com.mednikarov.stockscreener.data.model.Quote;
-import com.mednikarov.stockscreener.data.model.StockBatch;
+import com.mednikarov.stockscreener.data.model.WatchlistStock;
+import com.mednikarov.stockscreener.data.model.yahoo.market.Stock;
 import com.mednikarov.stockscreener.data.repository.StocksRepositoryImpl;
 
 import java.util.List;
 
 public class SearchViewModel extends AndroidViewModel {
     private final StocksRepositoryImpl mRepository;
-    private final MutableLiveData<List<Quote>> mWatchlistLiveData = new MutableLiveData<>();
+    private final MutableLiveData<List<Stock>> mWatchlistLiveData = new MutableLiveData<>();
 
     public SearchViewModel(@NonNull Application application) {
         super(application);
-        mRepository = new StocksRepositoryImpl(application);
+        mRepository = StocksRepositoryImpl.newInstance(application);
     }
 
     public void searchStock(String symbol){
         getRepository().searchStock(symbol);
     }
 
-    public MutableLiveData<StockBatch> getSearchLiveData(){
+    public MutableLiveData<WatchlistStock> getSearchLiveData(){
         return getRepository().getStockSearchLiveData();
+    }
+
+
+    public void addToWatchlist(WatchlistStock stock) {
+        getRepository().addToWatchlist(stock);
+    }
+
+    public void removeFromWatchlist(WatchlistStock stock){
+        getRepository().removeFromWatchlist(stock);
+    }
+
+    public MutableLiveData<List<Stock>> getWatchlistLiveData(){
+        return mWatchlistLiveData;
+    }
+
+    public void refreshData(){
+        getRepository().refreshWatchlist();
     }
 
     private StocksRepositoryImpl getRepository(){
         return mRepository;
-    }
-
-    public void addToWatchlist(Quote quote) {
-        getRepository().addToWatchlist(quote);
-    }
-
-    public void removeFromWatchlist(Quote quote){
-        getRepository().removeFromWatchlist(quote);
-    }
-
-    public MutableLiveData<List<Quote>> getWatchlistLiveData(){
-        return mWatchlistLiveData;
-    }
-
-    public void updateStockData(){
-        getWatchlistLiveData().setValue(getRepository().getWatchlist());
     }
 }

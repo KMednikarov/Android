@@ -8,11 +8,11 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 import com.mednikarov.stockscreener.data.Converters;
-import com.mednikarov.stockscreener.data.model.Quote;
+import com.mednikarov.stockscreener.data.model.WatchlistStock;
 
 import java.util.List;
 
-@Database(entities = {Quote.class}, version = 2, exportSchema = false)
+@Database(entities = {WatchlistStock.class}, version = 7, exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class StockDatabase extends RoomDatabase {
     private static final String DATABASE_NAME = "stock_screener_database";
@@ -34,19 +34,22 @@ public abstract class StockDatabase extends RoomDatabase {
         return mDatabaseInstance;
     }
 
-    public void insertStock(Quote quote){
-        stockDao().insert(quote);
+    public void insertStock(WatchlistStock stock){
+        stock.setIsInWatchlist(true);
+        stockDao().insert(stock);
+    }
+    public void cleanStocksTable(){
+        stockDao().cleanStocksTable();
+    }
+    public void deleteStock(WatchlistStock stock){
+        stockDao().delete(stock);
     }
 
-    public void deleteStock(Quote quote){
-        stockDao().delete(quote);
-    }
-
-    public Quote getStock(String symbol){
+    public WatchlistStock getStock(String symbol){
         return stockDao().selectByName(symbol);
     }
 
-    public List<Quote> getAllStocks(){
+    public List<WatchlistStock> getAllWatchlistQuotes(){
         return stockDao().selectAll();
     }
 }

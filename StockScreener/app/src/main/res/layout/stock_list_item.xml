@@ -23,7 +23,7 @@
         <TextView
             android:id="@+id/txt_symbol"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Symbol"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -39,7 +39,16 @@
             app:layout_constraintTop_toTopOf="parent">
 
         </TextView>
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart_stock"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_symbol"
 
+            />
         <CheckBox
             android:id="@+id/btn_stock_watch"
             android:layout_width="wrap_content"
@@ -50,5 +59,11 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

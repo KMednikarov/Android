@@ -7,7 +7,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitInstance {
-    private static final String BASE_URL = "https://cloud.iexapis.com/";
+    private static final String YAHOO_BASE_URL = "https://apidojo-yahoo-finance-v1.p.rapidapi.com";
     private static Retrofit mRetrofit;
 
     private RetrofitInstance(){
@@ -22,7 +22,6 @@ public class RetrofitInstance {
                     .addConverterFactory(getGsonConverterFactory())
                     .build();
         }
-
         return mRetrofit;
     }
 
@@ -38,6 +37,6 @@ public class RetrofitInstance {
     }
 
     private static String getBaseUrl(){
-        return BASE_URL;
+        return YAHOO_BASE_URL;
     }
 }
