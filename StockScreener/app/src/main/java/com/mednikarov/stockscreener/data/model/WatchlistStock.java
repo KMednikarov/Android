@@ -13,6 +13,10 @@ import org.jetbrains.annotations.NotNull;
 
 import java.math.BigDecimal;
 
+/***
+ * The WatchlistStock class is used for data transfer throughout the application.
+ * When stock information is requested from a REST API, it's values are assigned to this class and then transferred to other parts of the app.
+ */
 @Entity(tableName = "stocks")
 public class WatchlistStock {
     @PrimaryKey

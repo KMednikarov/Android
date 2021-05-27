@@ -7,16 +7,17 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.mednikarov.stockscreener.data.model.WatchlistStock;
-import com.mednikarov.stockscreener.data.repository.StocksRepositoryImpl;
+import com.mednikarov.stockscreener.data.repository.StocksRepository;
 
 import java.util.List;
 
+
 public class WatchlistViewModel extends AndroidViewModel {
-    private final StocksRepositoryImpl mStocksRepository;
+    private final StocksRepository mStocksRepository;
 
     public WatchlistViewModel(@NonNull Application application){
         super(application);
-        mStocksRepository = StocksRepositoryImpl.newInstance(application);
+        mStocksRepository = StocksRepository.newInstance(application);
     }
 
     public void refreshData(){
@@ -35,11 +36,7 @@ public class WatchlistViewModel extends AndroidViewModel {
         return getRepository().getWatchlistLiveData();
     }
 
-    public static WatchlistViewModel newInstance(Application application){
-        return new WatchlistViewModel(application);
-    }
-
-    private StocksRepositoryImpl getRepository(){
+    private StocksRepository getRepository(){
         return mStocksRepository;
     }
 }

@@ -20,7 +20,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class StocksRepositoryImpl {
+/***
+ * Repository class is used to handle the data layer of the app.
+ * It contains Room database instance and Retrofit instance for REST APIs.
+ */
+public class StocksRepository {
     private static final String IEX_API_TOKEN = "pk_37bf63c2ecf04a149ce3c6c6ae64a0fa";
     private static final String YAHOO_API_KEY = "0b8861c73fmshf2d20cfbe923540p1a6e3ajsn098a201bf50d";
     private final YahooStockService mYahooService;
@@ -30,19 +34,17 @@ public class StocksRepositoryImpl {
     private final MutableLiveData<List<WatchlistStock>> mWatchlistStockLiveData = new MutableLiveData<>();
 
     private final StockDatabase mStockDatabase;
-    private static StocksRepositoryImpl mRepository;
+    private static StocksRepository mRepository;
 
 
-    public StocksRepositoryImpl(Application application){
+    public StocksRepository(Application application){
         mStockDatabase = StockDatabase.getInstance(application);
         mYahooService = RetrofitInstance.getInstance().create(YahooStockService.class);
     }
 
-    public List<WatchlistStock> getWatchlist() {
-        return mStockDatabase.getAllWatchlistQuotes();
-    }
-
-    
+    /***
+     * Get all stocks stored in the database.
+     */
     public void refreshWatchlist(){
         try{
             //getDatabase().cleanStocksTable();
@@ -52,7 +54,10 @@ public class StocksRepositoryImpl {
             e.printStackTrace();
         }
     }
-    
+
+    /***
+     * Get all stocks stored in the database.
+     */
     public void getWatchlistStocks() throws IOException {
         List<WatchlistStock> watchlistStock = getDatabase().getAllWatchlistQuotes();
         getWatchlistLiveData().setValue(watchlistStock);
@@ -154,12 +159,14 @@ public class StocksRepositoryImpl {
         });
     }
 
-    
+    /***
+     * Insert new stock in the database
+     * @param stock
+     */
     public void addToWatchlist(WatchlistStock stock) {
         getDatabase().insertStock(stock);
     }
 
-    
     public void removeFromWatchlist(WatchlistStock stock) {
         WatchlistStock watchlistStock = new WatchlistStock();
         watchlistStock.setSymbol(stock.getSymbol());
@@ -167,13 +174,13 @@ public class StocksRepositoryImpl {
     }
 
 
-    public static StocksRepositoryImpl newInstance(Application application){
-        return new StocksRepositoryImpl(application);
+    public static StocksRepository newInstance(Application application){
+        return new StocksRepository(application);
     }
 
-    public static StocksRepositoryImpl getInstance(Application application){
+    public static StocksRepository getInstance(Application application){
         if(mRepository == null){
-            mRepository = new StocksRepositoryImpl(application);
+            mRepository = new StocksRepository(application);
         }
 
         return mRepository;

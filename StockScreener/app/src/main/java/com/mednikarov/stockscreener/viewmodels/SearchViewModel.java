@@ -8,17 +8,17 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.mednikarov.stockscreener.data.model.WatchlistStock;
 import com.mednikarov.stockscreener.data.model.yahoo.market.Stock;
-import com.mednikarov.stockscreener.data.repository.StocksRepositoryImpl;
+import com.mednikarov.stockscreener.data.repository.StocksRepository;
 
 import java.util.List;
 
 public class SearchViewModel extends AndroidViewModel {
-    private final StocksRepositoryImpl mRepository;
+    private final StocksRepository mRepository;
     private final MutableLiveData<List<Stock>> mWatchlistLiveData = new MutableLiveData<>();
 
     public SearchViewModel(@NonNull Application application) {
         super(application);
-        mRepository = StocksRepositoryImpl.newInstance(application);
+        mRepository = StocksRepository.newInstance(application);
     }
 
     public void searchStock(String symbol){
@@ -28,7 +28,6 @@ public class SearchViewModel extends AndroidViewModel {
     public MutableLiveData<WatchlistStock> getSearchLiveData(){
         return getRepository().getStockSearchLiveData();
     }
-
 
     public void addToWatchlist(WatchlistStock stock) {
         getRepository().addToWatchlist(stock);
@@ -46,7 +45,7 @@ public class SearchViewModel extends AndroidViewModel {
         getRepository().refreshWatchlist();
     }
 
-    private StocksRepositoryImpl getRepository(){
+    private StocksRepository getRepository(){
         return mRepository;
     }
 }

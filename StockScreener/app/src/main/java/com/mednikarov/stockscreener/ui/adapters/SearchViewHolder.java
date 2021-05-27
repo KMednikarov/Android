@@ -23,12 +23,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchViewHolder extends RecyclerView.ViewHolder {
-    private static List<WatchlistItemChanged> watchlistObsevers = new ArrayList<>();
+    private static final List<WatchlistItemChanged> watchlistObsevers = new ArrayList<>();
     private WatchlistStock mStock;
     private final TextView txtSymbolName;
     private final TextView txtPrice;
     private final CheckBox btnWatchlist;
-    private LineChart chartStock;
+    private final LineChart chartStock;
 
     public SearchViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -159,9 +159,6 @@ public class SearchViewHolder extends RecyclerView.ViewHolder {
             }
         }
     };
-
-
-
 
     /***
      * @return The WatchlistStock item for the current CardView

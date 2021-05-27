@@ -28,23 +28,15 @@ import java.util.List;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * A simple {@link Fragment} subclass used for the watchlist menu.
  * Use the {@link WatchlistFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class WatchlistFragment extends Fragment implements WatchlistItemChanged {
-    public static final String TAG = WatchlistFragment.class.getSimpleName();
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
     private FragmentWatchlistBinding mBinding;
     private WatchlistAdapter mAdapter;
     private WatchlistViewModel mViewModel;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public WatchlistFragment() {
         // Required empty public constructor
@@ -57,22 +49,13 @@ public class WatchlistFragment extends Fragment implements WatchlistItemChanged 
      * @return A new instance of fragment WatchlistFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static WatchlistFragment newInstance(/*String param1, String param2*/) {
-
-        /*Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);*/
+    public static WatchlistFragment newInstance() {
         return new WatchlistFragment();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -89,6 +72,9 @@ public class WatchlistFragment extends Fragment implements WatchlistItemChanged 
         return mBinding.getRoot();
     }
 
+    /***
+     * Observe WatchlistLiveData for changes
+     */
     private void observeData(){
         getViewModel().getWatchlistLiveData().observe(getViewLifecycleOwner(), new Observer<List<WatchlistStock>>() {
             @Override
@@ -105,6 +91,10 @@ public class WatchlistFragment extends Fragment implements WatchlistItemChanged 
     private WatchlistViewModel getViewModel(){
         return mViewModel;
     }
+
+    /***
+     * Add layout manager, attach the adapter to the recycler view and add touch helper.
+     */
     private void setupRecyclerView() {
         mAdapter = WatchlistAdapter.newInstance();
         mBinding.watchlistRecyclerView.setLayoutManager(new LinearLayoutManager(mBinding.getRoot().getContext()));
@@ -165,11 +155,20 @@ public class WatchlistFragment extends Fragment implements WatchlistItemChanged 
         return simpleItemTouchCallback;
     }
 
+    /***
+     * Swap two watchlist items positions.
+     * @param position
+     * @param newPosition
+     */
     private void swapWatchlistItems(int position, int newPosition) {
         Collections.swap(mAdapter.getStockList(), position, newPosition);
         mAdapter.notifyItemMoved(position, newPosition);
     }
 
+    /***
+     * Remove watchlist item from the adapter's list
+     * @param position
+     */
     private void removeWatchlistItem(int position){
         WatchlistStock stock = mAdapter.getItemAt(position);
         mAdapter.removeItemAt(position);

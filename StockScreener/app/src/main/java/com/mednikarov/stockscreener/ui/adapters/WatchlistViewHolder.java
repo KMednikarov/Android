@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WatchlistViewHolder extends RecyclerView.ViewHolder{
-    private static List<WatchlistItemChanged> watchlistObsevers = new ArrayList<>();
+    private static final List<WatchlistItemChanged> watchlistObsevers = new ArrayList<>();
     private WatchlistStock mStock;
     private final TextView txtSymbolName;
     private final TextView txtPrice;
@@ -41,7 +41,10 @@ public class WatchlistViewHolder extends RecyclerView.ViewHolder{
         btnWatchlist.setOnCheckedChangeListener(addToWatchlistListener);
     }
 
-
+    /***
+     * Setup the visual data and the chart for the stock list item
+     * @param stock
+     */
     public void setData(WatchlistStock stock){
         mStock = stock;
 
@@ -160,9 +163,6 @@ public class WatchlistViewHolder extends RecyclerView.ViewHolder{
             }
         }
     };
-
-
-
 
     /***
      * @return The WatchlistStock item for the current CardView

@@ -24,7 +24,7 @@ import com.mednikarov.stockscreener.ui.adapters.SearchAdapter;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * A simple {@link Fragment} subclass.
+ * A simple {@link Fragment} subclass used for the search menu.
  * Use the {@link SearchFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
